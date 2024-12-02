@@ -72,6 +72,9 @@ public class GenericMachine extends AContainer implements NotHopperable, RecipeD
         if (flow == ItemTransportFlow.WITHDRAW) {
           return getOutputSlots();
         }
+        else if (flow == ItemTransportFlow.INSERT) {
+            return getInputSlots();
+        }
         return new int[0];
       }
 
@@ -80,6 +83,9 @@ public class GenericMachine extends AContainer implements NotHopperable, RecipeD
           ItemStack item) {
         if (flow == ItemTransportFlow.WITHDRAW) {
           return getOutputSlots();
+        }
+        else if (flow == ItemTransportFlow.INSERT) {
+          return getInputSlots();
         }
 
         int fullSlots = 0;
